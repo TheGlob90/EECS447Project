@@ -1,6 +1,6 @@
 <?php
 // Connect to MySQL server, select database
-	$conn = mysql_connect('mysql.eecs.ku.edu', '***username here***', '***password here***')
+	$conn = mysql_connect('mysql.eecs.ku.edu', 'b542l829', 'aiV3eing')
     		or die('Could not connect: ' . mysql_error());
 	echo 'Connected successfully';
 	mysql_select_db('***database name here***') or die('Could not select database');
