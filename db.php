@@ -3,7 +3,7 @@
 	$conn = mysql_connect('mysql.eecs.ku.edu', 'b542l829', 'aiV3eing')
     		or die('Could not connect: ' . mysql_error());
 	echo 'Connected successfully';
-	mysql_select_db('***database name here***') or die('Could not select database');
+	mysql_select_db('b542l829') or die('Could not select database');
 
 // Send SQL query
 	$query = 'SELECT * FROM CRUISE';
