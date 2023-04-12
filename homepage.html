@@ -6,17 +6,17 @@
     <body>
         <h1>Login Form</h1>
 
-        <form action="db.php" method="post">
+        <form action="login.php" method="post">
             <div class="imgcontainer">
                 <img src="images/avatar.png" alt="Avatar" class="avatar">
             </div>
             
             <div class="container">
-                <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
+                <label for="username"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="username" id = "username" required>
 
                 <label for="password"><b>Password</b></label>
-                <input type="text" placeholder="Enter Password" name="password" required>
+                <input type="text" placeholder="Enter Password" name="password" id = "password" required>
 
                 <button class="login" type="submit">Login</button>
             </div>
