@@ -14,18 +14,19 @@ form{
     padding: 0;
 }
 
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+
 /*format container of form*/
 .loginPage{
-    position: absolute;
-
-    width: 300px;
-    height: 300px;
+	margin-left: 40%;
+	margin-top: 10%;
 
     /* Center form on page horizontally & vertically */
-    top: 50%;
-    left: 50%;
-    margin-top: -150px;
-    margin-left: -150px;
+    
 }
 
 /*format the container of image*/

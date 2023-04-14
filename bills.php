@@ -2,10 +2,6 @@
     session_start();
     $user_info = $_SESSION['user_info'];
 
-    echo '<a href="landing.html">Home</a> -
-    <a href="bills.html">Bills</a> -
-    <a href="spendinghistory.html">Spending History</a>';
-
     $conn = mysql_connect('mysql.eecs.ku.edu', 'b542l829', 'aiV3eing')
     		or die('Could not connect: ' . mysql_error());
     echo "<br>";
