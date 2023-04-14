@@ -1,4 +1,5 @@
 <?php
+	session_start();
     $username = $_POST["username"];
     $password = $_POST["password"];
 
@@ -12,14 +13,9 @@
     $query = "SELECT * FROM Account WHERE Password = '".$password."' AND Username = '".$username."'";
     $result = mysql_query($query) or die('Query failed: ' . mysql_error());
 
-    echo "<table>\n";
-	while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
-    		echo "\t<tr>\n";
-    		foreach ($line as $col_value) {
-        		echo "\t\t<td>$col_value</td>\n";
-    		}
-    		echo "\t</tr>\n";
-	}
-	echo "</table>\n";
+    $_SESSION['user_info'] = mysql_fetch_row($result);
+
+	header('Location: landing.html');
+	exit;
 
 ?> 
