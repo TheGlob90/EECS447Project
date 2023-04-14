@@ -18,6 +18,11 @@
 	if (mysql_num_rows($result)==0) { header('Location: homepage.html'); exit;}
 
 	header('Location: landing.html');
-	exit;
+	
+	// Free resultset
+	mysql_free_result($result);
+
+	// Close connection
+	mysql_close($link);
 
 ?> 
