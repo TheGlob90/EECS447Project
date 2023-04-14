@@ -15,6 +15,8 @@
 
     $_SESSION['user_info'] = mysql_fetch_row($result);
 
+	if (mysql_num_rows($result)==0) { header('Location: homepage.html'); exit;}
+
 	header('Location: landing.html');
 	exit;
 
