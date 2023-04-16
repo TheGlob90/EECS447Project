@@ -10,7 +10,7 @@
     echo "<br>";
 	mysql_select_db('b542l829') or die('Could not select database');
 
-    $query = "SELECT * FROM Account WHERE Password = '".$password."' AND Username = '".$username."'";
+    $query = "SELECT * FROM Account WHERE Password = '$password' AND Username = '$username'";
     $result = mysql_query($query) or die('Query failed: ' . mysql_error());
 
     $_SESSION['user_info'] = mysql_fetch_row($result);

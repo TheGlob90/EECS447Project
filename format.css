@@ -2,28 +2,45 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
 }
+.logins{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(27, 30, 49);
+}
 
 /*format form*/
 form{
     border: 3px solid #f1f1f1;
     width: 300px;
-    height: 400px;
+    height: 450px;
     border-radius: 10px;
     background-color: lightgrey;
     margin: 0;
     padding: 0;
 }
 
+/*format tabs on landing page*/
 .tab {
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
   }
 
+.home {
+    color: white;
+}
+.home:hover{
+    color: lightblue;
+}
+
 /*format container of form*/
 .loginPage{
-	margin-left: 40%;
-	margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     /* Center form on page horizontally & vertically */
     

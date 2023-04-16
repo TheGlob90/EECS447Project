@@ -10,7 +10,7 @@
     echo "<br>";
 	mysql_select_db('b542l829') or die('Could not select database');
 
-    $query = "INSERT INTO `Account`(`Name`, `Username`, `Password`, `Email`) VALUES ('.$name.','.$username.','.$password.','.$email.')";
+    $query = "INSERT INTO `Account`(`Name`, `Username`, `Password`, `Email`) VALUES ('$name','$username','$password','$email')";
     $result = mysql_query($query) or die('Query failed: ' . mysql_error());
     echo "Account Created";
 
