@@ -10,5 +10,22 @@
             <a class="tablinks" href="spendinghistory.html"><button>Spending History</button></a>
         </div>
         <?php include 'bills.php';?>
+        <form action="addbill.php" method="post">
+            <h1 style="text-align: center;">Add Bill</h1>
+            <div class="container">
+                <label for="type"><b>Type</b></label>
+                <input type="text" placeholder="Enter type of this bill" name="type" id = "type" required>
+
+                <label for="amount"><b>Amount</b></label>
+                <br>
+                <input type="number" placeholder="Enter Amount for this bill" name="amount" id = "amount" required>
+                <br>
+
+                <label for="dates"><b>Date</b></label>
+                <input type="text" placeholder="Enter the date for this bill" name="dates" id = "dates" required>
+
+                <button class="Add bill" type="submit">Add Bill</button>
+            </div>
+        </form>    
     </body>
 </html>
