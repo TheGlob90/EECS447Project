@@ -75,3 +75,11 @@ button{
 button:hover{
     opacity: 0.8;
 }
+
+td{
+    padding: 15px;
+}
+
+table {
+    border-spacing: 30px;
+  }
