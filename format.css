@@ -23,7 +23,58 @@ form{
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
-  }
+}
+
+.drop{
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    display: inline-block;
+}
+
+.dropDown .icon{
+    float: left;
+    padding: 10px 10px;
+    outline: none;
+    border: none;
+    height: 15px;
+}
+
+.dropDown label{
+    float: left;
+    padding: 10px 10px;
+    outline: none;
+    border: none;
+    height: 15px;
+}
+
+.dropDown button{
+    float: left;
+    outline: none;
+    border: none;
+    height: 15px;
+    padding: 10px 10px;
+}
+
+.tab button{
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 5px 8px;
+    transition: 0.3s;
+    font-size: 17px;
+
+}
+
+.tab button:hover {
+    background-color: lightgrey;
+}
+
+table td{
+    color: white;
+}
 
 .home {
     color: white;
@@ -75,7 +126,7 @@ input[type=text], input[type=password]{
 
 
 /*General Button Formatting*/
-button{
+form button{
     cursor: pointer;
     margin: 8px 0;
 }

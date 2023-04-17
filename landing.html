@@ -3,12 +3,20 @@
     <head>
         <link rel="stylesheet" href="format.css">
     </head>
-    <div class="tab" background-color="red">
-        <a class="tablinks" href="landing.html">Home</a>
-        <label>|</label>
-        <a class="tablinks" href="bills.html">Bills</a>
-        <label>|</label>
-        <a class="tablinks" href="spendinghistory.html">Spending History</a>
-    </div>
-    <?php include 'landing.php';?>
+    <body class="logins">
+        <div class="tab">
+            <a href="landing.html"><button>Home</button></a>
+            <a href="bills.html"><button>Bills</button></a>
+            <a href="spendinghistory.html"><button>Spending History</button></a>
+        </div>
+        <?php include 'landing.php';?>
+        <h2 style="color: grey;">Accounts</h2><br>
+        <div class="dropDown">
+            <div class="drop">
+                <img class="icon" src="images/bank_icon.png">
+                <label>Checking</label>
+                <button>henry</button>
+            </div>
+        </div>
+    </body>
 </html>
