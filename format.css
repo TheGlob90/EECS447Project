@@ -68,8 +68,22 @@ form{
 
 }
 
+#wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
 .tab button:hover {
     background-color: lightgrey;
+}
+
+.leftside{
+    background-color: white;
+}
+
+.rightside{
+    background-color: white;
 }
 
 table td{
