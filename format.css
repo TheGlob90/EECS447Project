@@ -25,37 +25,6 @@ form{
     background-color: #f1f1f1;
 }
 
-.drop{
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
-    display: inline-block;
-}
-
-.dropDown .icon{
-    float: left;
-    padding: 10px 10px;
-    outline: none;
-    border: none;
-    height: 15px;
-}
-
-.dropDown label{
-    float: left;
-    padding: 10px 10px;
-    outline: none;
-    border: none;
-    height: 15px;
-}
-
-.dropDown button{
-    float: left;
-    outline: none;
-    border: none;
-    height: 15px;
-    padding: 10px 10px;
-}
-
 .tab button{
     background-color: inherit;
     float: left;
@@ -67,6 +36,40 @@ form{
     font-size: 17px;
 
 }
+
+.dropDown{
+    padding-top: 20px;
+}
+
+.drop{
+    display: flex;
+    align-items:center;
+}
+
+.drop img{
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 5px 8px;  
+}
+
+.acc{
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 100px;
+    padding: 5px 75px;
+}
+
+.arrow{
+    float: right;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
 
 #wrapper{
     display: flex;
