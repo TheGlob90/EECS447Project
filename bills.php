@@ -1,4 +1,5 @@
 <?php
+	include 'CSS/main.css';
     session_start();
     $user_info = $_SESSION['user_info'];
 
