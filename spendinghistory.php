@@ -1,4 +1,5 @@
 <?php
+	include 'CSS/main.css';
     session_start();
     $user_info = $_SESSION['user_info'];
 
@@ -7,13 +8,13 @@
     echo "<br>";
 	mysql_select_db('b542l829') or die('Could not select database');
 
-    $query = "SELECT Bills.Type, Bills.Amount, Bills.Dates FROM Bills, Account WHERE Bills.A_ID = Account.ID AND Account.ID = '".$user_info[4]."'";
+    $query = "SELECT SH.Amount, SH.Frequency, SH.Dates FROM `Spending History` AS SH INNER JOIN Account ON SH.A_ID = Account.ID AND Account.ID = '".$user_info[4]."'";
     $result = mysql_query($query) or die('Query failed: ' . mysql_error());
 
     echo "<table>\n";
 	echo "<tr> 
-			<th> Type </th> 
 			<th> Amount </th> 
+			<th> Frequency </th> 
 			<th> Date </th>
 		 </tr>";
 	while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
