@@ -8,14 +8,13 @@
     echo "<br>";
 	mysql_select_db('b542l829') or die('Could not select database');
 
-    $query = "SELECT SH.Amount, SH.Frequency, SH.Dates FROM `Spending History` AS SH INNER JOIN Account ON SH.A_ID = Account.ID AND Account.ID = '".$user_info[4]."'";
+    $query = "SELECT MONTHNAME(SH.Dates), SUM(SH.Amount) FROM `Spending History` AS SH INNER JOIN Account ON SH.A_ID = Account.ID AND Account.ID = '".$user_info[4]."' ORDER BY Month(SH.Dates)";
     $result = mysql_query($query) or die('Query failed: ' . mysql_error());
 
     echo "<table>\n";
 	echo "<tr> 
-			<th> Amount </th> 
-			<th> Frequency </th> 
-			<th> Date </th>
+			<th> Month </th>  
+			<th> Amount </th>
 		 </tr>";
 	while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
     		echo "\t<tr>\n";
