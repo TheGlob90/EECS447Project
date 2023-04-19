@@ -25,7 +25,7 @@
     		echo "\t</tr>\n";
 	}
 	echo "</table>\n";
-
+	
     // Free resultset
 	mysql_free_result($result);
 
