@@ -1,7 +1,8 @@
 <?php
     session_start();
     $user_info = $_SESSION['user_info'];
-	$account = $_POST['accounts'];
+	$account = $_POST['postvar'];
+	echo "$account";
 
     $conn = mysql_connect('mysql.eecs.ku.edu', 'b542l829', 'aiV3eing')
     		or die('Could not connect: ' . mysql_error());

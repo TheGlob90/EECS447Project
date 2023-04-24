@@ -3,6 +3,16 @@
     <head>
         <link rel="stylesheet" href="format.css">
     </head>
+    <script>
+        window.onload = function()
+        {
+            document.getElementsByName("account").onclick = function()
+            {
+                document.getElementsByName("postvar")[0].value = this.value;
+                document.forms.myform.submit();
+            }
+        };
+        </script>
     <body class="logins" style="text-align: center;">
         <div class="tab">
             <a href="landing.html"><button>Home</button></a>
@@ -11,35 +21,72 @@
         </div>
         <?php include 'landing.php';?>
         <h2 style="color: grey;">Accounts</h2><br>
-        <div class="dropDown">
-            <a href="accounts.php"><button value = "Checking">
+        <form name ="myform" action="accounts.php" method="post">
+            <input type="hidden" name="postvar" value="" />
+            <div class="dropDown">
+                <input type="submit" value="Checking" name="account">
                 <img src="images/bank_icon.png" height="20px" style="float: left;">
-                <label class="acc">Checking</label>
-            </button></a>
-        </div>
-        <div class="dropDown">
-            <a href="accounts.php"><button value = "Card Balance">
+            </div>
+            <div class="dropDown">
+                <input type="submit" value="Card Balance" name="account">
                 <img src="images/bank_icon.png" height="20px" style="float: left;">
-                <label class="acc">Card Balance</label>
-                </button></a>
-        </div>
-        <div class="dropDown">
-            <a href="accounts.php"><button value = "Net Cash">
+            </div>
+            <div class="dropDown">
+                <input type="submit" value="Net Cash" name="account">
                 <img src="images/bank_icon.png" height="20px" style="float: left;">
-                <label class="acc">Net Cash</label>
-            </button></a>
-        </div>
-        <div class="dropDown">
-            <a href="accounts.php"><button value= "Savings">
+            </div>
+            <div class="dropDown">
+                <input type="submit" value="Savings" name="account">
                 <img src="images/bank_icon.png" height="20px" style="float: left;">
-                <label class="acc">Savings</label>
-            </button></a>
-        </div>
-        <div class="dropDown">
-            <a href="accounts.php"><button value="Investments">
+            </div>
+            <div class="dropDown">
+                <input type="submit" value="Investments" name="account">
                 <img src="images/bank_icon.png" height="20px" style="float: left;">
-                <label class="acc">Investments</label>
-            </button></a>
-        </div>
+            </div>
+        </form>
     </body>
 </html>
+
+<?php
+    session_start();
+    $user_info = $_SESSION['user_info'];
+	$account = $_POST['postvar'];
+	echo "$account";
+
+    $conn = mysql_connect('mysql.eecs.ku.edu', 'b542l829', 'aiV3eing')
+    		or die('Could not connect: ' . mysql_error());
+    echo "<br>";
+	mysql_select_db('b542l829') or die('Could not select database');
+
+    $query = "SELECT BA.Type, BA.Name, BA.Institution_Name FROM `Billing Account` AS BA INNER JOIN Account ON BA.A_ID = Account.ID AND Account.ID = '".$user_info[4]."' AND BA.Type = '".$account."'";
+    $result = mysql_query($query);
+
+	if(mysql_num_rows($result)==0)
+	{
+		echo "No account found.";
+	}
+	else
+	{
+		echo "<table>\n";
+		echo "<tr> 
+			<th> Type </th> 
+			<th> Name </th> 
+			<th> Institution Name </th>
+		 </tr>";
+		while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) 
+		{
+    		echo "\t<tr>\n";
+    		foreach ($line as $col_value) {
+        		echo "\t\t<td>$col_value</td>\n";
+    		}
+    		echo "\t</tr>\n";
+		}
+		echo "</table>\n";
+	}
+
+    // Free resultset
+	mysql_free_result($result);
+
+	// Close connection
+	mysql_close($link);
+?>
