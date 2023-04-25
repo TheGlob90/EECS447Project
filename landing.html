@@ -3,16 +3,6 @@
     <head>
         <link rel="stylesheet" href="format.css">
     </head>
-    <script>
-        window.onload = function()
-        {
-            document.getElementsByName("account").onclick = function()
-            {
-                document.getElementsByName("postvar")[0].value = this.value;
-                document.forms.myform.submit();
-            }
-        };
-        </script>
     <body class="logins" style="text-align: center;">
         <div class="tab">
             <a href="landing.html"><button>Home</button></a>
@@ -21,27 +11,11 @@
         </div>
         <?php include 'landing.php';?>
         <h2 style="color: grey;">Accounts</h2><br>
-        <form name ="myform" action="accounts.php" method="post">
-            <input type="hidden" name="postvar" value="" />
-            <div class="dropDown">
-                <input type="submit" value="Checking" name="account">
-                <img src="images/bank_icon.png" height="20px" style="float: left;">
-            </div>
-            <div class="dropDown">
-                <input type="submit" value="Card Balance" name="account">
-                <img src="images/bank_icon.png" height="20px" style="float: left;">
-            </div>
-            <div class="dropDown">
-                <input type="submit" value="Net Cash" name="account">
-                <img src="images/bank_icon.png" height="20px" style="float: left;">
-            </div>
-            <div class="dropDown">
-                <input type="submit" value="Savings" name="account">
-                <img src="images/bank_icon.png" height="20px" style="float: left;">
-            </div>
-            <div class="dropDown">
-                <input type="submit" value="Investments" name="account">
-                <img src="images/bank_icon.png" height="20px" style="float: left;">
+        <form name ="myform" action="" method="post">
+            <label for="name"><b>Name</b></label>
+                <input type="text" placeholder="Enter name for account to view" name="name" id = "name" required>
+
+                <button class="Sign up" type="submit">Pull up Account</button>
             </div>
         </form>
     </body>
@@ -50,7 +24,7 @@
 <?php
     session_start();
     $user_info = $_SESSION['user_info'];
-	$account = $_POST['postvar'];
+	$account = $_POST['name'];
 	echo "$account";
 
     $conn = mysql_connect('mysql.eecs.ku.edu', 'b542l829', 'aiV3eing')
