@@ -32,7 +32,7 @@
     echo "<br>";
 	mysql_select_db('b542l829') or die('Could not select database');
 
-    $query = "SELECT BA.Type, BA.Name, BA.Institution_Name FROM `Billing Account` AS BA INNER JOIN Account ON BA.A_ID = Account.ID AND Account.ID = '".$user_info[4]."' AND BA.Type = '".$account."'";
+    $query = "SELECT BA.Type, BA.Name, BA.Institution_Name, BA.Amount FROM `Billing Account` AS BA INNER JOIN Account ON BA.A_ID = Account.ID AND Account.ID = '".$user_info[4]."' AND BA.Type = '".$account."'";
     $result = mysql_query($query);
 
 	if(mysql_num_rows($result)==0)
@@ -46,6 +46,7 @@
 			<th> Type </th> 
 			<th> Name </th> 
 			<th> Institution Name </th>
+            <th> Amount </th>
 		 </tr>";
 		while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) 
 		{
