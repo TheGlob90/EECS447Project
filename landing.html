@@ -3,7 +3,7 @@
     <head>
         <link rel="stylesheet" href="format.css">
     </head>
-    <body class="logins" style="text-align: center;">
+    <body class="logins" style="text-align: center; background-color: white;">
         <div class="tab">
             <a href="landing.html"><button>Home</button></a>
             <a href="bills.html"><button>Bills</button></a>
@@ -11,7 +11,7 @@
         </div>
         <?php include 'landing.php';?>
         <h2 style="color: grey;">Accounts</h2><br>
-        <div class="loginPage">
+        <div class="log">
         <form name ="myform" action="" method="post">
             <label for="name"><b>Account to view</b></label>
                 <input type="text" placeholder="Enter name for account to view" name="name" id = "name" required>
@@ -27,7 +27,6 @@
     session_start();
     $user_info = $_SESSION['user_info'];
 	$account = $_POST['name'];
-	echo "$account";
 
     $conn = mysql_connect('mysql.eecs.ku.edu', 'b542l829', 'aiV3eing')
     		or die('Could not connect: ' . mysql_error());

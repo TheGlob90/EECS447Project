@@ -18,6 +18,13 @@ form{
     padding: 0;
 }
 
+log {
+    display:flex;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
 /*format tabs on landing page*/
 .tab {
     overflow: hidden;
